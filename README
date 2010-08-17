@@ -1,0 +1,19 @@
+UCL ENVIRONMENT
+===============
+
+Uses UCL-FFI to bind to the 'getenv', 'setenv', and 'unsetenv' functions
+exported by libc. Provides these abilities even on schemes which only
+provide one or two of them natively. Raises an exception when an error
+is signalled by the underlying functions.
+
+GETENV key
+  Return the string associated with the environment variable KEY. Returns #f
+  if the key doesn't exist.
+
+SETENV key val overwrite?
+  Set environment variable KEY to the string VAL. If OVERWRITE? is true, sets
+  it even if it is already set. Otherwise, only sets it if KEY is currently
+  unset.
+
+UNSETENV key
+  Remove environment variable KEY from the environment.

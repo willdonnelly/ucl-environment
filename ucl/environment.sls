@@ -11,7 +11,7 @@
 
   (define (getenv name)
     (let ((ptr (raw-getenv name)))
-      (if (equal? (pointer->integer ptr) 0)
+      (if (null-ptr? ptr)
           #f
           (string-read ptr))))
 
